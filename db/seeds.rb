@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+# mastodon = Artist.create!( { name: "", bio: "", image_url: "" } )
+
+mastodon = Artist.create!( { name: "Mastodon", bio: "Atlanta-based sludge/stoner/alternative metal outfit Mastodon formed in 1999 around the talents of guitarist Bill Kelliher, drummer Bränn Dailor, bassist/vocalist Troy Sanders, and guitarist/vocalist Brent Hinds. One of the more notable New Wave of American Heavy Metal acts, a genre spawned in the mid-'90s by bands like Pantera, Biohazard, and Machine Head, Mastodon's innovative, lyrically astute blend of progressive metal, grindcore, and hardcore helped position the band as one of the preeminent metal acts of the early 21st century.", image_url: "https://goo.gl/Y8Xmoe" } )
+
+deftones = Artist.create!( { name: "Deftones", bio: "Deftones is an American alternative metal band from Sacramento, California, U.S. Formed in 1988, the band was founded by Chino Moreno (lead vocals, rhythm guitar), Stephen Carpenter (lead guitar), Abe Cunningham (drums) and Dominic Garcia (bass). During the group's first five years, the band's lineup changed several times, but stabilized in 1993 when Cunningham rejoined the group after his departure in 1990. Cunningham replaced John Taylor, who had replaced Garcia after he had switched to drums in 1990, and the bassist role had been filled by Chi Cheng. The lineup remained stable for fifteen years, with the exception of keyboardist and turntablist Frank Delgado being added in 1999.", image_url: "https://goo.gl/1G7uh2" } )
