@@ -1,0 +1,20 @@
+<%= form_for @artist do |f| %>
+  <div class="form-group">
+    <label>Artist name</label>
+    <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Bio</label>
+    <%= f.text_area :bio, rows: 7, placeholder: "Artist biography", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Artist Image</label>
+    <%= f.text_field :image_url, placeholder: "image address (e.g. http://www.deftonesworld.com/wp-content/uploads/2011/10/the-deftones.jpg)", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

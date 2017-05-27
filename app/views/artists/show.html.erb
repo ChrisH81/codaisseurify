@@ -1,0 +1,10 @@
+<h1><%= @artist.name %></h1>
+
+<p>Bio: <%= @artist.bio %></p>
+
+<%= image_tag @artist.image_url, :size => "260x180" %>
+
+<br><br>
+<hr>
+
+<%= link_to "[All Artists]", artists_path %>
