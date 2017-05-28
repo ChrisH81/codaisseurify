@@ -5,6 +5,7 @@ end
 
 def show
   @album = Album.find(params[:id])
+  @artist = Artist.find(@album.artist_id)
 end
 
 def new
