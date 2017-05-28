@@ -75,6 +75,9 @@ $dropDown       : true;
       > a, > a:hover, > a:focus {
         color: $colHighlight;
         background-color: $bgHighlight; }}}
+  .item {
+    height: 300px;
+  }
 }
 
 @media (min-width: 768px){
