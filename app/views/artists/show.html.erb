@@ -7,6 +7,19 @@
 <br><br>
 <hr>
 
+<div class = "list_container">
+  <h3>Albums For This Artist</h3>
+
+  <% if @artist.albums.any?  %>
+    <ul>
+      <% @artist.albums.each do |album| %>
+      <li><%= link_to album.album_name, album_path(album) %></li>
+  <% end %>
+    </ul>
+  <% else %>
+    <p>There are no albums for this artist</p>
+  <% end %>
+</div>
 
 <div>
   <%= link_to "Update", edit_artist_path(@artist.id), class: "btn btn-primary" %>
