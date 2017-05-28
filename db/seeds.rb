@@ -20,5 +20,5 @@ Album.create!([
   { album_name: "Gore", released: 1995, album_image_url: "https://goo.gl/7gJNFY", artist: deftones },
 ])
 
-albums_count = Dinosaur.all.length
+albums_count = Album.all.length
 puts "#{albums_count} albums were created."

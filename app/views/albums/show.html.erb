@@ -1,0 +1,15 @@
+<h1><%= @album.album_name %></h1>
+
+<p>Year: <%= @album.release %></p>
+
+<%= image_tag @album.album_image_url, :size => "93×70" %>
+
+<br><br>
+<hr>
+
+
+<div>
+  <%= link_to "Update", edit_album_path(@album.id), class: "btn btn-primary" %>
+  <%= link_to "Delete", album_path(@album.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+  <%= link_to "Back To Artist", artists_path, class: "btn btn-primary" %>
+</div>
