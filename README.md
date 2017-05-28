@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*** Still being worked on ***
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+** more tests 
+** sort by name or creation date
+** Features for users who log in
+** take away add/remove/edit for users who aren't logged in
+** more content for home page
+** songs associated to albums
+** genres
