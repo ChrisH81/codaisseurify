@@ -3,14 +3,14 @@
 
 <p>Year: <%= @album.released %></p>
 
-<%= image_tag @album.album_image_url, :size => "93×70" %>
+<%= image_tag @album.album_image_url, :size => "150x150" %>
 
 <br><br>
 <hr>
 
 
 <div>
-  <%= link_to "Update", edit_album_path(@album.id), class: "btn btn-primary" %>
-  <%= link_to "Delete", album_path(@album.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+  <%= link_to "Update Album", edit_album_path(@album.id), class: "btn btn-primary" %>
+  <%= link_to "Delete Album", album_path(@album.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
   <%= link_to "Back To Artist", artists_path, class: "btn btn-primary" %>
 </div>

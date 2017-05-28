@@ -3,3 +3,7 @@
 <% @albums.each do |album| %>
 <p><%= link_to album.album_name, album_path(album.id) %></p>
 <% end %>
+
+<div>
+  <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
+</div>
