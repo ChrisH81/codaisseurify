@@ -12,7 +12,7 @@
   <% if @artist.albums.any?  %>
     <div class="row">
       <% @artist.albums.each do |album| %>
-        <div class="col-md-3 album"><p><%= link_to album.album_name, album_path(album) %></p>
+        <div class="col-md-3 layout"><p><%= link_to album.album_name, album_path(album) %></p>
         <%= image_tag album.album_image_url, :size => "150x150" %></div>
       <% end %>
     </div>
