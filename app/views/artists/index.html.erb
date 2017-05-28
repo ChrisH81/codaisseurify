@@ -1,8 +1,15 @@
 <h1>Artists</h1>
 
-<% @artists.each do |artist| %>
-    <p><%= link_to artist.name, artist_path(artist.id) %></p>
+<% @artists.each_slice(3) do |artists| %>
+  <div class="row">
+    <% @artists.each do |artist| %>
+      <div class="col-md-4"><p><%= link_to artist.name, artist_path(artist.id) %></p>
+      <%= image_tag artist.image_url, :size => "260x180" %></div>
+    <% end %>
+  </div>
 <% end %>
+
+<br><br>
 
 <div>
   <%= link_to "Add new Artist", new_artist_path, class: "btn btn-primary" %>

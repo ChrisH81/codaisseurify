@@ -1,26 +1,26 @@
 <h1><%= @artist.name %></h1>
 
+<%= image_tag @artist.image_url, :size => "260x180" %>
+<br><br>
 <p>Bio: <%= @artist.bio %></p>
 
-<%= image_tag @artist.image_url, :size => "260x180" %>
-
-<br><br>
 <hr>
 
 <div class = "list_container">
   <h3>Albums For This Artist</h3>
 
   <% if @artist.albums.any?  %>
-    <ul>
+    <div class="row">
       <% @artist.albums.each do |album| %>
-      <li><%= link_to album.album_name, album_path(album) %></li>
-  <% end %>
-    </ul>
+        <div class="col-md-3 album"><p><%= link_to album.album_name, album_path(album) %></p>
+        <%= image_tag album.album_image_url, :size => "150x150" %></div>
+      <% end %>
+    </div>
   <% else %>
     <p>There are no albums for this artist</p>
   <% end %>
 </div>
-
+<br>
 <hr>
 
 <div>
