@@ -64,6 +64,7 @@ $dropDown       : true;
     color: $colDefault;
     &:hover {
       color: $colHighlight; }}}
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
@@ -76,6 +77,16 @@ $dropDown       : true;
         background-color: $bgHighlight; }}}
 }
 
-.glyphycon-cd {
-  color: white;
+@media (min-width: 768px){
+  .divider-vertical {
+  height: 30px;
+  margin: 10px 9px;
+  border-left: 1px solid #F2F2F2;
+  border-right: 1px solid #FFF;
+ }
+}
+
+.glyphicon-cd {
+  margin-top: 5px;
+  margin-left: -12px;
 }
