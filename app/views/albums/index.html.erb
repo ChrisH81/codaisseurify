@@ -1,12 +1,25 @@
 <h1>Albums</h1>
 
-
-  <div class="row">
-    <% @albums.each do |album| %>
-      <div class="col-md-3 layout"><p><%= link_to album.album_name, album_path(album.id) %></p>
-      <%= image_tag album.album_image_url, :size => "150x150" %></div>
-    <% end %>
+<span class="sort">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+      Sort by
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Added (first)", albums_path(sort_by: "oldest") %></li>
+      <li><%= link_to "Added (last)", albums_path(sort_by: "newest") %></li>
+      <li><%= link_to "Name", albums_path(sort_by: "name") %></li>
+    </ul>
   </div>
+</span>
+<br>
+<div class="row">
+  <% @albums.each do |album| %>
+    <div class="col-md-3 layout"><p><%= link_to album.album_name, album_path(album.id) %></p>
+    <%= image_tag album.album_image_url, :size => "150x150" %></div>
+  <% end %>
+</div>
 <br>
 <hr>
 

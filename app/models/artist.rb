@@ -15,6 +15,6 @@ class Artist < ApplicationRecord
       order(name: :asc)
     else
       order(created_at: :asc)
+    end
   end
-end
 end

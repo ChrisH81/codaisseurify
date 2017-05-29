@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
-  def index
-  @albums = Album.all
+
+def index
+  @albums = Album.all.order_list(params[:sort_by])
 end
 
 def show
