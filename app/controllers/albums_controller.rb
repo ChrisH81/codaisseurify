@@ -37,12 +37,17 @@ def update
   end
 end
 
+
 def destroy
   @album = Album.find(params[:id])
+  @album.destroy!
 
-  @album.destroy
-
-  redirect_to albums_path
+  respond_to do |format|
+    format.html { redirect_to albums_url }
+    format.json { head :no_content }
+    format.js   { render :layout => false }
+    format.xml  { head :ok }
+  end
 end
 
 private

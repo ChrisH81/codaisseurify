@@ -8,12 +8,12 @@
 
 <div class = "list_container">
   <h3>Albums For This Artist</h3>
-
   <% if @artist.albums.any?  %>
     <div class="row">
       <% @artist.albums.each do |album| %>
         <div class="col-md-3 layout"><p><%= link_to album.album_name, album_path(album) %></p>
-        <%= image_tag album.album_image_url, :size => "150x150" %></div>
+        <%= image_tag album.album_image_url, :size => "150x150" %>
+        <%= link_to 'Remove Album', album, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_album btn btn-primary' %></div>
       <% end %>
     </div>
   <% else %>
@@ -26,4 +26,9 @@
   <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
   <%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
   <%= link_to "Back To Artists", artists_path, class: "btn btn-primary" %>
+</div>
+
+<div class="panel-body">
+  <%= render 'albums/form' %>
+</div>
 </div>

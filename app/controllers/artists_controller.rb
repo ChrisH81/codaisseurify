@@ -38,10 +38,18 @@ end
 
 def destroy
   @artist = Artist.find(params[:id])
-
   @artist.destroy
 
   redirect_to artists_path
+
+  @album = Album.find(params[:id])
+  @album.destroy!
+
+  respond_to do |format|
+    format.html { redirect_to albums_url }
+    format.json { head :no_content }
+    format.js   { render :layout => false }
+  end
 end
 
 private
