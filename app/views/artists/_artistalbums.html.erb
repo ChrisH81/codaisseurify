@@ -1,0 +1,14 @@
+<table>
+  <tbody>
+    <% @artist.albums.each do |album| %>
+      <tr>
+        <td><%= image_tag album.album_image_url, :size => "150x150" %></td>
+        <td><%= album.album_name %></td>
+        <td><%= album.released %></td>
+        <td><%= link_to 'Show', album %></td>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td> <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_album' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

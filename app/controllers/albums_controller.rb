@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
- respond_to :html, :js
+ respond_to :html, :js, :json
 def index
   @albums = Album.all.order_list(params[:sort_by])
 end
@@ -37,16 +37,23 @@ def update
   end
 end
 
-
+# DELETE /artists/1
+# DELETE /artists/1.json
 def destroy
   @album = Album.find(params[:id])
-  @album.destroy!
-
+  @album.destroy
   respond_to do |format|
-    format.html { redirect_to albums_url }
+    format.html { redirect_to albums_url, notice: 'Artist was successfully destroyed.' }
     format.json { head :no_content }
     format.js   { render :layout => false }
   end
+end
+
+
+def remove_all
+  Album.delete_all
+  flash[:notice] = "You have removed all albums!"
+  redirect_to albums_path
 end
 
 private

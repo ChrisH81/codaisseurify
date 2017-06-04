@@ -1,13 +1,13 @@
-<div class="row">
+<tbody>
   <% @albums.each do |album| %>
-    <div class="col-md-3 layout"><p><%= link_to album.album_name, album_path(album.id) %></p>
-    <%= image_tag album.album_image_url, :size => "150x150" %>
-    <%= link_to 'Remove Album', album, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_album btn btn-primary' %></div>
-  <% end %>
-</div>
-<br>
-<hr>
-
-<div>
-  <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
-</div>
+    <tr>
+      <td><%= image_tag album.album_image_url, :size => "150x150" %></td>
+      <td><%= album.album_name %></td>
+      <td><%= album.released %></td>
+      <td><%= link_to 'Show', album %></td>
+      <td><%= link_to 'Edit', edit_album_path(album) %></td>
+      <td> <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_album' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
