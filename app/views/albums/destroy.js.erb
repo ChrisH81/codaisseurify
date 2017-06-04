@@ -1,1 +1,4 @@
-$('#<%= dom_id(@album) %>').fadeOut(700);
+$("#albums").html("<%= j render @albums %>");
+if ($('#albums').is(':empty')){
+  $("#albums").html("<p>It looks like this album has no albums yet, or albums have been deleted... <br><br> Click on the button bellow in order to add a song related to the album <%= @album.name %> of the artist <%= @album.artist.name %> </p>");
+}

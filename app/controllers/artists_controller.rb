@@ -52,6 +52,7 @@ def destroy
   end
 end
 
+
 private
 
 def artist_params

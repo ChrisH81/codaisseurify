@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-
+ respond_to :html, :js
 def index
   @albums = Album.all.order_list(params[:sort_by])
 end
@@ -46,7 +46,6 @@ def destroy
     format.html { redirect_to albums_url }
     format.json { head :no_content }
     format.js   { render :layout => false }
-    format.xml  { head :ok }
   end
 end
 

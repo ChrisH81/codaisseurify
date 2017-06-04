@@ -14,16 +14,4 @@
   </div>
 </span>
 <br>
-<div class="row">
-  <% @albums.each do |album| %>
-    <div class="col-md-3 layout"><p><%= link_to album.album_name, album_path(album.id) %></p>
-    <%= image_tag album.album_image_url, :size => "150x150" %>
-    <%= link_to 'Remove Album', album, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_album' %></div>
-  <% end %>
-</div>
-<br>
-<hr>
-
-<div>
-  <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
-</div>
+ <%= render 'album' %>
