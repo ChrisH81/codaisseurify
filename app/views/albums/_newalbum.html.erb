@@ -1,0 +1,31 @@
+<%= form_for(Album.new) do |f| %>
+
+
+  <div class="form-group">
+    <label>Album Name</label>
+    <%= f.text_field :album_name, placeholder: "Name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Year</label>
+    <div class="input-group">
+      <%= f.number_field :released, placeholder: "eg. 1999", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Album Image</label>
+    <%= f.text_field :album_image_url, placeholder: "album image address (e.g. http://www.deftonesworld.com/wp-content/uploads/2011/10/the-deftones.jpg)", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :artist_id %>
+  <%= f.hidden_field :artist_id, :value => @artist.id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", method: :post, :remote => true, :class => 'create_album btn btn-primary'%>
+    <%= link_to 'Back', :back, class: "btn btn-primary" %>
+  </div>
+
+  <% end %>

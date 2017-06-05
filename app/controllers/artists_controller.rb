@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
 
+  # GET /artists
+  # GET /artists.json
 def index
   @artists = Artist.all.order_list(params[:sort_by])
 end

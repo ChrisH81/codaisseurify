@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
  respond_to :html, :js, :json
+
+
 def index
   @albums = Album.all.order_list(params[:sort_by])
 end
@@ -16,7 +18,7 @@ end
 def create
   @album = Album.new(album_params)
 
-  if @album.save
+  if @album.save!
      redirect_to @album
   else
      render 'new'
@@ -48,7 +50,6 @@ def destroy
     format.js   { render :layout => false }
   end
 end
-
 
 def remove_all
   Album.delete_all
