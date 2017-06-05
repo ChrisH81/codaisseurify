@@ -15,10 +15,17 @@
   <% end %>
 </div>
 <hr>
+
 <div>
   <%= link_to "Update Artist", edit_artist_path(@artist.id), class: "btn btn-primary" %>
   <%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
   <%= link_to "Back To Artists", artists_path, class: "btn btn-primary" %>
 </div>
+
 <br>
+<hr>
+<h3>Add New Album</h3>
+
+<br>
+
 <%= render partial: 'albums/newalbum',  locals: {album: @album} %>
