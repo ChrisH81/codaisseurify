@@ -1,8 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-
+// padding for partial forms
+th, td {
+    padding: 15px;
+}
 // shadow for navbar
 .navbar-custom {
     -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
