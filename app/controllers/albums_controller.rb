@@ -19,7 +19,7 @@ def create
   @album = Album.new(album_params)
 
   if @album.save!
-     redirect_to @album
+     redirect_to request.referrer
   else
      render 'new'
   end
@@ -45,7 +45,7 @@ def destroy
   @album = Album.find(params[:id])
   @album.destroy
   respond_to do |format|
-    format.html { redirect_to albums_url, notice: 'Artist was successfully destroyed.' }
+    format.html { redirect_to request.referrer, notice: 'Artist was successfully destroyed.' }
     format.json { head :no_content }
     format.js   { render :layout => false }
   end
@@ -54,7 +54,7 @@ end
 def remove_all
   Album.delete_all
   flash[:notice] = "You have removed all albums!"
-  redirect_to albums_path
+  redirect_to request.referrer
 end
 
 private

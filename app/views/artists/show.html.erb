@@ -20,7 +20,7 @@
   <%= link_to "Update Artist", edit_artist_path(@artist.id), class: "btn btn-primary" %>
   <%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
   <%= link_to "Back To Artists", artists_path, class: "btn btn-primary" %>
-  <%= link_to "Remove All Albums", remove_all_albums_path, :method => :get,  :remote => true, :class => 'delete_album btn btn-primary' %>
+<%= link_to "Remove All", remove_all_albums_path, :method => :get, :class => 'btn btn-primary' %>
 </div>
 
 <br>
